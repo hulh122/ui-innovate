@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issue #6108 — VM0 Managed Model Provider UI Redesign</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f5f5; color: #333; }
+    .header { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 24px 32px; }
+    .header h1 { font-size: 20px; font-weight: 600; }
+    .header p { color: #666; margin-top: 8px; font-size: 14px; line-height: 1.5; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); gap: 24px; padding: 24px 32px; }
+    .card { background: #fff; border-radius: 8px; border: 1px solid #e0e0e0; overflow: hidden; }
+    .card-header { padding: 16px 20px; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; }
+    .card-header h2 { font-size: 16px; font-weight: 600; }
+    .badge { font-size: 12px; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+    .badge-baseline { background: #e8e8e8; color: #666; }
+    .badge-a { background: #dbeafe; color: #1d4ed8; }
+    .badge-b { background: #dcfce7; color: #16a34a; }
+    .badge-c { background: #fef3c7; color: #d97706; }
+    .card-desc { padding: 12px 20px; font-size: 13px; color: #666; border-bottom: 1px solid #f0f0f0; line-height: 1.5; }
+    iframe { width: 100%; height: 600px; border: none; }
+    .links { padding: 12px 20px; border-top: 1px solid #e0e0e0; }
+    .links a { font-size: 13px; color: #2563eb; text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Issue #6108 — Improve VM0 Managed Model Provider Settings UI with Credit Usage</h1>
+    <p>Redesign the Model Providers settings page to elevate VM0 Managed as the always-present default provider, integrate credit usage dashboard for admins, and clearly separate optional third-party providers.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-header">
+        <h2>Baseline</h2>
+        <span class="badge badge-baseline">Current</span>
+      </div>
+      <div class="card-desc">Current Model Providers page — VM0 Managed is treated the same as other providers in a flat grid. No credit usage visibility.</div>
+      <iframe src="baseline/model-providers-settings.html"></iframe>
+      <div class="links"><a href="baseline/model-providers-settings.html" target="_blank">Open standalone ↗</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>Variant A — Minimal Enhancement</h2>
+        <span class="badge badge-a">Conservative</span>
+      </div>
+      <div class="card-desc">VM0 Managed integrated into the Default section with "Included with your plan" badge. Simple credit usage progress bar added below. Grid renamed to "Additional providers" with only the Add button.</div>
+      <iframe src="variant-a/model-providers-settings.html"></iframe>
+      <div class="links"><a href="variant-a/model-providers-settings.html" target="_blank">Open standalone ↗</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>Variant B — Credit Dashboard</h2>
+        <span class="badge badge-b">Balanced</span>
+      </div>
+      <div class="card-desc">VM0 Managed elevated to a hero card with built-in credit dashboard — large remaining balance, progress bar, and three stat boxes (monthly usage, avg per member, active members). Clear separator before optional providers.</div>
+      <iframe src="variant-b/model-providers-settings.html"></iframe>
+      <div class="links"><a href="variant-b/model-providers-settings.html" target="_blank">Open standalone ↗</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>Variant C — Full Admin Dashboard</h2>
+        <span class="badge badge-c">Ambitious</span>
+      </div>
+      <div class="card-desc">Full dashboard redesign with warm gradient hero, two-column credit overview + quick stats, plus a member usage breakdown table showing per-member consumption with mini bar charts and last active timestamps.</div>
+      <iframe src="variant-c/model-providers-settings.html"></iframe>
+      <div class="links"><a href="variant-c/model-providers-settings.html" target="_blank">Open standalone ↗</a></div>
+    </div>
+  </div>
+</body>
+</html>
